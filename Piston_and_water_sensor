@@ -1,0 +1,45 @@
+
+int  piston =13;
+int piston2 = 12;
+int piston3 = 11;
+int counter = 0;
+//Variable to store the incomming data
+
+void setup()
+{
+  //Begin serial communication
+  Serial.begin(9600);
+  pinMode (piston, OUTPUT);
+  pinMode (piston2, OUTPUT);
+  pinMode (piston3, OUTPUT);
+   digitalWrite (piston3, HIGH);
+   digitalWrite (piston2, LOW);
+   digitalWrite (piston, LOW);
+  
+}
+
+void loop(){
+  
+
+
+{
+  value = analogRead(read); //Read data from analog pin and store it to value variable
+  if ((value>480 && value<=2000)&& (counter<3)){ 
+    counter ++;
+ 
+  digitalWrite (piston2, HIGH);
+  digitalWrite (piston3, LOW);
+  delay (4000);
+  digitalWrite (piston2, LOW);
+  digitalWrite (piston3, HIGH);
+  
+  }
+{  if((value>480 && value<=2000)&&(counter==3)){
+digitalWrite (piston, HIGH);
+digitalWrite (piston3, LOW);
+}
+
+}
+
+}
+}
